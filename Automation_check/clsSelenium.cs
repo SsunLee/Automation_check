@@ -14,7 +14,7 @@ namespace Automation_check
         public clsSelenium()
         {
             // 초기 생성 영역
-            Automation_check.Form1.Log("[Selenium Class]>init complete");
+            Form1.f.Log("[Selenium Class]>init complete");
         }
 
         private string _url = string.Empty;
@@ -42,7 +42,7 @@ namespace Automation_check
             drv = new ChromeDriver();
             drv.Navigate().GoToUrl(_url);
             drv.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
-            Form1.Log(@"[Selenium Class]>Create Webdriver");
+            Form1.f.Log(@"[Selenium Class]>Create Webdriver");
 
         }
         public void typingIDPW()
@@ -54,33 +54,31 @@ namespace Automation_check
             foreach (char s in _id)
             {
                 elementID.SendKeys(s.ToString());
-                Form1.Log($" ID : {s}");
+                Form1.f.Log($" ID : {s}");
                 Thread.Sleep(50);
             }
             foreach (char s in _pw)
             {
                 elementPW.SendKeys(s.ToString());
-                Form1.Log($" PW : {s}");
+                Form1.f.Log($" PW : {s}");
                 Thread.Sleep(50);
             }
 
-            Form1.Log(@"[Selenium Class]> Typing ID PW ");
+            Form1.f.Log(@"[Selenium Class]> Typing ID PW ");
 
             Thread.Sleep(100);
             
             var elementLogin = drv.FindElement(By.ClassName("btn-login"));
             elementLogin.Click();
-            Form1.Log(@"[Selenium Class]> Click Login Button ");
+            Form1.f.Log(@"[Selenium Class]> Click Login Button ");
         }
 
-        [Obsolete]
         public void directCheck()
         {
             // 즉시 퇴근 체크
             ClickTheButton();
         }
 
-        [Obsolete]
         private void ClickTheButton()
         {
             var elementQuit = drv.FindElement(By.Id("outChk"));
@@ -90,13 +88,13 @@ namespace Automation_check
             {
                 WebDriverWait wait = new WebDriverWait(drv, TimeSpan.FromSeconds(10));
                 IAlert alert = wait.Until(ExpectedConditions.AlertIsPresent());
-                Form1.Log($"[Selenium Class]> popup : {alert.Text.ToString()}");
+                Form1.f.Log($"[Selenium Class]> popup : {alert.Text.ToString()}");
                 alert.Accept();
                 Thread.Sleep(2000);
             }
             catch (NoAlertPresentException e)
             {
-                Form1.Log($"[Selenium Class]> Error : {e.Message.ToString()}");
+                Form1.f.Log($"[Selenium Class]> Error : {e.Message.ToString()}");
                 drv.Close();
                 drv = null;
                 return;
