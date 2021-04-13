@@ -39,12 +39,12 @@ namespace Automation_check
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.cbSS = new System.Windows.Forms.ComboBox();
             this.cbMM = new System.Windows.Forms.ComboBox();
             this.cbHH = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnRunSchedule = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,7 +116,7 @@ namespace Automation_check
             // txtLog
             // 
             this.txtLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLog.Location = new System.Drawing.Point(14, 292);
+            this.txtLog.Location = new System.Drawing.Point(12, 360);
             this.txtLog.Multiline = true;
             this.txtLog.Name = "txtLog";
             this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -126,7 +126,7 @@ namespace Automation_check
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 417);
+            this.label1.Location = new System.Drawing.Point(11, 485);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 15);
             this.label1.TabIndex = 4;
@@ -149,11 +149,20 @@ namespace Automation_check
             this.panel1.Controls.Add(this.cbMM);
             this.panel1.Controls.Add(this.cbHH);
             this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnRunSchedule);
             this.panel1.Location = new System.Drawing.Point(12, 225);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(233, 119);
             this.panel1.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "시간 : ";
             // 
             // cbSS
             // 
@@ -189,34 +198,25 @@ namespace Automation_check
             this.checkBox1.Text = "예약 활성화";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnRunSchedule
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("새굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(61, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 33);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "예약 퇴근";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "시간 : ";
+            this.btnRunSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRunSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRunSchedule.Font = new System.Drawing.Font("새굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRunSchedule.ForeColor = System.Drawing.Color.White;
+            this.btnRunSchedule.Location = new System.Drawing.Point(61, 80);
+            this.btnRunSchedule.Name = "btnRunSchedule";
+            this.btnRunSchedule.Size = new System.Drawing.Size(110, 33);
+            this.btnRunSchedule.TabIndex = 2;
+            this.btnRunSchedule.Text = "예약 퇴근";
+            this.btnRunSchedule.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(263, 449);
+            this.ClientSize = new System.Drawing.Size(263, 581);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -252,7 +252,7 @@ namespace Automation_check
         private System.Windows.Forms.ComboBox cbMM;
         private System.Windows.Forms.ComboBox cbHH;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRunSchedule;
         private System.Windows.Forms.Label label3;
     }
 }

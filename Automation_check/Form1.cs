@@ -85,6 +85,7 @@ namespace Automation_check
             this.btn_open.Click += new EventHandler(this.openBrowser);
             this.btn_chk.Click += new EventHandler(this.clickCheck);
             this.btn_quit.Click += new EventHandler(this.clickQuit);
+            this.btnRunSchedule.Click += new EventHandler(this.Schedule_Check);
             Log("init_event success");
         }
 
@@ -117,7 +118,7 @@ namespace Automation_check
                 this.GotoClick();
             }, null, timeToGo, Timeout.InfiniteTimeSpan);
         }
-        private void Schedule_Check()
+        private void Schedule_Check(object sender, EventArgs e)
         {
             int hour = Int32.Parse(cbHH.Text.ToString());
             int minute = Int32.Parse(cbMM.Text.ToString());
