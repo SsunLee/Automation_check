@@ -14,7 +14,6 @@ namespace Automation_check
         public clsSelenium()
         {
             // 초기 생성 영역
-            
             Automation_check.Form1.Log("[Selenium Class]>init complete");
         }
 
@@ -74,12 +73,14 @@ namespace Automation_check
             Form1.Log(@"[Selenium Class]> Click Login Button ");
         }
 
+        [Obsolete]
         public void directCheck()
         {
             // 즉시 퇴근 체크
             ClickTheButton();
         }
 
+        [Obsolete]
         private void ClickTheButton()
         {
             var elementQuit = drv.FindElement(By.Id("outChk"));

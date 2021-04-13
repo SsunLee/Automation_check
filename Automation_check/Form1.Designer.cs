@@ -29,6 +29,7 @@ namespace Automation_check
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btn_chk = new System.Windows.Forms.Button();
             this.btn_open = new System.Windows.Forms.Button();
             this.btn_quit = new System.Windows.Forms.Button();
@@ -100,7 +101,7 @@ namespace Automation_check
             this.timer_textbox.Name = "timer_textbox";
             this.timer_textbox.Size = new System.Drawing.Size(233, 77);
             this.timer_textbox.TabIndex = 2;
-            this.timer_textbox.Text = "22:22:22";
+            this.timer_textbox.Text = "00:00:00";
             this.timer_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox1
@@ -134,8 +135,9 @@ namespace Automation_check
             this.Controls.Add(this.btn_scheduleQuit);
             this.Controls.Add(this.btn_quit);
             this.Controls.Add(this.btn_chk);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "출/퇴근 관리";
             this.ResumeLayout(false);
             this.PerformLayout();
 
