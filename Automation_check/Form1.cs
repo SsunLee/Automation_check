@@ -114,12 +114,20 @@ namespace Automation_check
             }
             this.scheduleTimer = new System.Threading.Timer(x =>
             {
-                this.temp_method();
+                this.GotoClick();
             }, null, timeToGo, Timeout.InfiniteTimeSpan);
         }
-        private void temp_method()
+        private void Schedule_Check()
         {
-            SetUpTimer(new TimeSpan(16, 00, 00));
+            int hour = Int32.Parse(cbHH.Text.ToString());
+            int minute = Int32.Parse(cbMM.Text.ToString());
+            int seconds = Int32.Parse(cbSS.Text.ToString());
+            SetUpTimer(new TimeSpan(hour, minute, seconds));
+        }
+        private void GotoClick()
+        {
+            cs.create_webdriver();
+            cs.typingIDPW();
         }
         #endregion
 
