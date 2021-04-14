@@ -50,6 +50,7 @@ namespace Automation_check
         }
         public void typingIDPW()
         {
+
             var elementID = drv.FindElement(By.Id("userId"));
             var elementPW = drv.FindElement(By.Id("pw"));
             elementID.Clear();
@@ -74,6 +75,7 @@ namespace Automation_check
             var elementLogin = drv.FindElement(By.ClassName("btn-login"));
             elementLogin.Click();
             Form1.f.Log(@"[Selenium Class]> Click Login Button ");
+
         }
 
         public void directCheck()

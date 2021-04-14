@@ -46,9 +46,18 @@ namespace Automation_check
             this.btnRunSchedule = new System.Windows.Forms.Button();
             this.btn_showLog = new System.Windows.Forms.Button();
             this.pn_log = new System.Windows.Forms.Panel();
+            this.pn_IDPW = new System.Windows.Forms.Panel();
+            this.btn_IDPWsave = new System.Windows.Forms.Button();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtPW = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_Showsetting = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pn_log.SuspendLayout();
+            this.pn_IDPW.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_chk
@@ -226,6 +235,76 @@ namespace Automation_check
             this.pn_log.Size = new System.Drawing.Size(232, 126);
             this.pn_log.TabIndex = 8;
             // 
+            // pn_IDPW
+            // 
+            this.pn_IDPW.Controls.Add(this.btn_IDPWsave);
+            this.pn_IDPW.Controls.Add(this.txtID);
+            this.pn_IDPW.Controls.Add(this.txtPW);
+            this.pn_IDPW.Controls.Add(this.label7);
+            this.pn_IDPW.Controls.Add(this.label5);
+            this.pn_IDPW.Controls.Add(this.label6);
+            this.pn_IDPW.Location = new System.Drawing.Point(12, 495);
+            this.pn_IDPW.Name = "pn_IDPW";
+            this.pn_IDPW.Size = new System.Drawing.Size(234, 139);
+            this.pn_IDPW.TabIndex = 11;
+            // 
+            // btn_IDPWsave
+            // 
+            this.btn_IDPWsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_IDPWsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_IDPWsave.Font = new System.Drawing.Font("새굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_IDPWsave.ForeColor = System.Drawing.Color.White;
+            this.btn_IDPWsave.Location = new System.Drawing.Point(90, 88);
+            this.btn_IDPWsave.Name = "btn_IDPWsave";
+            this.btn_IDPWsave.Size = new System.Drawing.Size(73, 23);
+            this.btn_IDPWsave.TabIndex = 11;
+            this.btn_IDPWsave.Text = "Save";
+            this.btn_IDPWsave.UseVisualStyleBackColor = false;
+            // 
+            // txtID
+            // 
+            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtID.Location = new System.Drawing.Point(45, 30);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(118, 23);
+            this.txtID.TabIndex = 10;
+            // 
+            // txtPW
+            // 
+            this.txtPW.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPW.Location = new System.Drawing.Point(45, 59);
+            this.txtPW.Name = "txtPW";
+            this.txtPW.Size = new System.Drawing.Size(118, 23);
+            this.txtPW.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(13, 7);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 15);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "ㆍ아이디 비번 저장";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 33);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 15);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "ID :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 15);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "PW :";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -237,13 +316,28 @@ namespace Automation_check
             this.label4.TabIndex = 9;
             this.label4.Text = "편하게 퇴근해보아요 !! (feat.쑨쑨배)";
             // 
+            // btn_Showsetting
+            // 
+            this.btn_Showsetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_Showsetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Showsetting.Font = new System.Drawing.Font("새굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Showsetting.ForeColor = System.Drawing.Color.White;
+            this.btn_Showsetting.Location = new System.Drawing.Point(113, 334);
+            this.btn_Showsetting.Name = "btn_Showsetting";
+            this.btn_Showsetting.Size = new System.Drawing.Size(54, 23);
+            this.btn_Showsetting.TabIndex = 7;
+            this.btn_Showsetting.Text = "Setting";
+            this.btn_Showsetting.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(263, 363);
+            this.ClientSize = new System.Drawing.Size(261, 359);
+            this.Controls.Add(this.pn_IDPW);
             this.Controls.Add(this.pn_log);
+            this.Controls.Add(this.btn_Showsetting);
             this.Controls.Add(this.btn_showLog);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -263,6 +357,8 @@ namespace Automation_check
             this.panel1.PerformLayout();
             this.pn_log.ResumeLayout(false);
             this.pn_log.PerformLayout();
+            this.pn_IDPW.ResumeLayout(false);
+            this.pn_IDPW.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,6 +383,14 @@ namespace Automation_check
         private System.Windows.Forms.Button btn_showLog;
         private System.Windows.Forms.Panel pn_log;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtPW;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel pn_IDPW;
+        private System.Windows.Forms.Button btn_IDPWsave;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btn_Showsetting;
     }
 }
 
