@@ -34,6 +34,9 @@ namespace Automation_check
             label1.Text = $"{getUserName()} 님 환영합니다. ^^";
             txtLog.Font = new Font("맑은 고딕", 8);
 
+            pn_log.Visible = false;
+            panel1.Visible = false;
+
         }
         public static Form1 f;
         public string getUserName()
@@ -98,6 +101,8 @@ namespace Automation_check
             this.btn_chk.Click += new EventHandler(this.clickCheck);
             this.btn_quit.Click += new EventHandler(this.clickQuit);
             this.btnRunSchedule.Click += new EventHandler(this.Schedule_Check);
+            this.btn_openPanel.Click += new EventHandler(this.Open_Schedule_Panel);
+            this.btn_showLog.Click += new EventHandler(this.Open_Log);
             Log("init_event success");
         }
 
@@ -114,6 +119,21 @@ namespace Automation_check
                 timer_textbox.Text=$"{DateTime.Now.Hour.ToString("00.##")}:{DateTime.Now.Minute.ToString("00.##")}:{DateTime.Now.Second.ToString("00.##")}";
             }
         }
+
+        private void Open_Log(object sender, EventArgs e)
+        {
+            if (pn_log.Visible == false)
+            {
+                pn_log.Visible = true;
+                this.Height = 555;
+            }
+            else
+            {
+                pn_log.Visible = false;
+                this.Height = 407;
+            }
+        }
+
 
         #region 예약실행
         private System.Threading.Timer scheduleTimer;
@@ -141,14 +161,34 @@ namespace Automation_check
             }
 
         }
+        private void Open_Schedule_Panel(object sender, EventArgs e)
+        {
+            if (panel1.Visible == false)
+            {
+                panel1.Visible = true;
+            }
+            else
+            {
+                panel1.Visible = false; 
+            }
+        }
+
         private void Schedule_Check(object sender, EventArgs e)
         {
-            Log("Schedule_Check");
-            int hour = Int32.Parse(cbHH.Text.ToString());
-            int minute = Int32.Parse(cbMM.Text.ToString());
-            int seconds = Int32.Parse(cbSS.Text.ToString());
-            SetUpTimer(new TimeSpan(hour, minute, seconds));
-            Log("SetUpTimer");
+            if (cs.drv != null)
+            {
+                Log("Schedule_Check");
+                int hour = Int32.Parse(cbHH.Text.ToString());
+                int minute = Int32.Parse(cbMM.Text.ToString());
+                int seconds = Int32.Parse(cbSS.Text.ToString());
+                SetUpTimer(new TimeSpan(hour, minute, seconds));
+                Log("SetUpTimer");
+            }
+            else
+            {
+                MessageBox.Show("브라우저가 실행되지 않았습니다.", "쑨쑨배", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         private void GotoClick()
         {
