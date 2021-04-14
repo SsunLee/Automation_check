@@ -39,11 +39,14 @@ namespace Automation_check
 
         public void create_webdriver()
         {
-            drv = new ChromeDriver();
-            drv.Navigate().GoToUrl(_url);
-            drv.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
-            Form1.f.Log(@"[Selenium Class]>Create Webdriver");
+            
+            Form1.f.Log(@System.IO.Directory.GetCurrentDirectory());
 
+                drv = new ChromeDriver();
+                drv.Navigate().GoToUrl(_url);
+                drv.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+                Form1.f.Log(@"[Selenium Class]>Create Webdriver");
+  
         }
         public void typingIDPW()
         {
@@ -81,6 +84,7 @@ namespace Automation_check
 
         private void ClickTheButton()
         {
+
             var elementQuit = drv.FindElement(By.Id("outChk"));
             elementQuit.Click();
 

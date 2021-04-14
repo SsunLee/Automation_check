@@ -67,6 +67,18 @@ namespace Automation_check
         {
             string time = DateTime.Now.ToString("yyyy_MM_dd_HH:mm:ss");
             System.Diagnostics.Debug.Print($"{time} : {msg}");
+            string savePath = @"C:\Users\tnsqo\Desktop\log\log.txt";
+            string textValue = @msg;
+
+
+            if (System.IO.File.Exists(savePath) == true)
+            {
+                System.IO.File.AppendAllText(savePath, $"\r\n{time} :{textValue}", Encoding.Default);
+            }
+            else
+            {
+                System.IO.File.WriteAllText(savePath, $"{time}:{textValue}", Encoding.Default);
+            }
 
             if (f.txtLog.InvokeRequired)
             {
@@ -107,28 +119,53 @@ namespace Automation_check
         private System.Threading.Timer scheduleTimer;
         private void SetUpTimer(TimeSpan alertTime)
         {
-            DateTime current = DateTime.Now;
-            TimeSpan timeToGo = alertTime - current.TimeOfDay;
-            if (timeToGo < TimeSpan.Zero)
+            try
             {
-                return;//time already passed
+                Log("SetUpTimer");
+                DateTime current = DateTime.Now;
+                TimeSpan timeToGo = alertTime - current.TimeOfDay;
+                if (timeToGo < TimeSpan.Zero)
+                {
+                    Log("time already pass - return");
+                    return;//time already passed
+                }
+                this.scheduleTimer = new System.Threading.Timer(x =>
+                {
+                    Log("예약실행 - GotoClick");
+                    this.GotoClick();
+                }, null, timeToGo, Timeout.InfiniteTimeSpan);
             }
-            this.scheduleTimer = new System.Threading.Timer(x =>
+            catch (Exception e)
             {
-                this.GotoClick();
-            }, null, timeToGo, Timeout.InfiniteTimeSpan);
+                Log($"exception : {e.Message}");
+            }
+
         }
         private void Schedule_Check(object sender, EventArgs e)
         {
+            Log("Schedule_Check");
             int hour = Int32.Parse(cbHH.Text.ToString());
             int minute = Int32.Parse(cbMM.Text.ToString());
             int seconds = Int32.Parse(cbSS.Text.ToString());
             SetUpTimer(new TimeSpan(hour, minute, seconds));
+            Log("SetUpTimer");
         }
         private void GotoClick()
         {
-            cs.create_webdriver();
-            cs.typingIDPW();
+            Log("GotoClick");
+            try
+            {
+                cs.create_webdriver();
+                Log("create_webdriver");
+
+                cs.typingIDPW();
+                Log("typingIDPW");
+            }
+            catch (Exception e)
+            {
+                Log(e.Message);
+            }
+      
         }
         #endregion
 
@@ -148,39 +185,74 @@ namespace Automation_check
 
         private void openBrowser(object sender, EventArgs e)
         {
+            Log("openBrowser");
+            
             cs.create_webdriver();
         }
         private void clickCheck(object sender, EventArgs e)
         {
-            cs.typingIDPW();
+            Log("clickCheck");
+            if (cs.drv != null)
+            {
+                cs.typingIDPW();
+            }
+            else
+            {
+                MessageBox.Show("브라우저가 실행되지 않았습니다.", "쑨쑨배", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         private void clickQuit(object sender, EventArgs e)
         {
-            cs.directCheck();
+            Log("clickQuit");
+            if (cs.drv != null)
+            {
+                try
+                {
+                    cs.directCheck();
+                }
+                catch (Exception a)
+                {
+                    Log(a.Message);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("브라우저가 실행되지 않았습니다.", "쑨쑨배", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Log("Form1_FormClosed");
             if (cs.drv != null)
             {
+                Log("Program Quit");
                 cs.drv.Quit();
             }
         }
 
         private protected void inputValueCombobox()
         {
-            for (int i = 0; i <= 24; i++)
+            for (int i = 0; i < 24; i++)
             {
-                cbHH.Items.Add(i);
+                cbHH.Items.Add(i.ToString("00.##"));
             }
-            for (int i = 0; i <= 60; i++)
+            for (int i = 0; i < 60; i++)
             {
-                cbMM.Items.Add(i);
+                cbMM.Items.Add(i.ToString("00.##"));
             }
-            for (int i = 0; i <= 60; i++)
+            for (int i = 0; i < 60; i++)
             {
-                cbSS.Items.Add(i);
+                cbSS.Items.Add(i.ToString("00.##"));
             }
+            cbHH.Text = DateTime.Now.Hour.ToString("00.##");
+            cbMM.Text = DateTime.Now.Minute.ToString("00.##");
+            cbSS.Text = DateTime.Now.Second.ToString("00.##");
+
+                
+                
         }
 
     }

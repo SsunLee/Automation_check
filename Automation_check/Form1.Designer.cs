@@ -83,7 +83,7 @@ namespace Automation_check
             this.btn_quit.Location = new System.Drawing.Point(127, 186);
             this.btn_quit.Name = "btn_quit";
             this.btn_quit.Size = new System.Drawing.Size(118, 33);
-            this.btn_quit.TabIndex = 1;
+            this.btn_quit.TabIndex = 3;
             this.btn_quit.Text = "즉시 퇴근";
             this.btn_quit.UseVisualStyleBackColor = false;
             // 
@@ -96,7 +96,7 @@ namespace Automation_check
             this.btn_scheduleQuit.Location = new System.Drawing.Point(14, 186);
             this.btn_scheduleQuit.Name = "btn_scheduleQuit";
             this.btn_scheduleQuit.Size = new System.Drawing.Size(110, 33);
-            this.btn_scheduleQuit.TabIndex = 1;
+            this.btn_scheduleQuit.TabIndex = 2;
             this.btn_scheduleQuit.Text = "예약 퇴근";
             this.btn_scheduleQuit.UseVisualStyleBackColor = false;
             // 
@@ -161,7 +161,7 @@ namespace Automation_check
             this.label3.Location = new System.Drawing.Point(14, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 99;
             this.label3.Text = "시간 : ";
             // 
             // cbSS
@@ -170,7 +170,7 @@ namespace Automation_check
             this.cbSS.Location = new System.Drawing.Point(171, 41);
             this.cbSS.Name = "cbSS";
             this.cbSS.Size = new System.Drawing.Size(49, 23);
-            this.cbSS.TabIndex = 4;
+            this.cbSS.TabIndex = 7;
             // 
             // cbMM
             // 
@@ -178,7 +178,7 @@ namespace Automation_check
             this.cbMM.Location = new System.Drawing.Point(116, 41);
             this.cbMM.Name = "cbMM";
             this.cbMM.Size = new System.Drawing.Size(49, 23);
-            this.cbMM.TabIndex = 4;
+            this.cbMM.TabIndex = 6;
             // 
             // cbHH
             // 
@@ -186,7 +186,7 @@ namespace Automation_check
             this.cbHH.Location = new System.Drawing.Point(61, 41);
             this.cbHH.Name = "cbHH";
             this.cbHH.Size = new System.Drawing.Size(49, 23);
-            this.cbHH.TabIndex = 4;
+            this.cbHH.TabIndex = 5;
             // 
             // checkBox1
             // 
@@ -194,7 +194,7 @@ namespace Automation_check
             this.checkBox1.Location = new System.Drawing.Point(14, 9);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(90, 19);
-            this.checkBox1.TabIndex = 3;
+            this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "예약 활성화";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -207,7 +207,7 @@ namespace Automation_check
             this.btnRunSchedule.Location = new System.Drawing.Point(61, 80);
             this.btnRunSchedule.Name = "btnRunSchedule";
             this.btnRunSchedule.Size = new System.Drawing.Size(110, 33);
-            this.btnRunSchedule.TabIndex = 2;
+            this.btnRunSchedule.TabIndex = 8;
             this.btnRunSchedule.Text = "예약 퇴근";
             this.btnRunSchedule.UseVisualStyleBackColor = false;
             // 
@@ -216,7 +216,7 @@ namespace Automation_check
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(263, 581);
+            this.ClientSize = new System.Drawing.Size(263, 516);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
