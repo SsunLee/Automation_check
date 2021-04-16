@@ -274,6 +274,7 @@ namespace Automation_check
             this.txtPW.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPW.Location = new System.Drawing.Point(45, 59);
             this.txtPW.Name = "txtPW";
+            this.txtPW.PasswordChar = '*';
             this.txtPW.Size = new System.Drawing.Size(118, 23);
             this.txtPW.TabIndex = 10;
             // 
@@ -334,7 +335,7 @@ namespace Automation_check
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(261, 359);
+            this.ClientSize = new System.Drawing.Size(261, 363);
             this.Controls.Add(this.pn_IDPW);
             this.Controls.Add(this.pn_log);
             this.Controls.Add(this.btn_Showsetting);

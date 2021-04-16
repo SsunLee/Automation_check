@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="ID_SAVE" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">w201001</Value>
     </Setting>
     <Setting Name="PW_SAVE" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">wise201001</Value>
     </Setting>
   </Settings>
 </SettingsFile>

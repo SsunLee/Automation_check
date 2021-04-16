@@ -25,7 +25,7 @@ namespace Automation_check.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("w201001")]
         public string ID_SAVE {
             get {
                 return ((string)(this["ID_SAVE"]));
@@ -37,7 +37,7 @@ namespace Automation_check.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("wise201001")]
         public string PW_SAVE {
             get {
                 return ((string)(this["PW_SAVE"]));

@@ -97,7 +97,10 @@ namespace Automation_check
         {
             string time = DateTime.Now.ToString("yyyy_MM_dd_HH:mm:ss");
             System.Diagnostics.Debug.Print($"{time} : {msg}");
-            string savePath = @"C:\Users\tnsqo\Desktop\log\log.txt";
+
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            string savePath = path + @"\log.txt";
             string textValue = @msg;
 
             if (System.IO.File.Exists(savePath) == true)
@@ -192,7 +195,7 @@ namespace Automation_check
             this.btn_openPanel.Click += new EventHandler(this.Open_Schedule_Panel);
             this.btn_showLog.Click += new EventHandler(this.Open_Log);
             this.btn_Showsetting.Click += new EventHandler(this.Open_settings);
-
+            this.btn_IDPWsave.Click += new EventHandler(this.saveButtonIDPW);
             Log("init_event success");
         }
 
@@ -242,7 +245,15 @@ namespace Automation_check
         private void saveButtonIDPW(object sender, EventArgs e)
         {
             Properties.Settings.Default.Save();
+            Log("SAVE_EVENT");
+            Log($"ID : {txtID.Text.ToString()} \r\n PW : {txtPW.Text.ToString()}");
+            txtID.Text = Properties.Settings.Default.ID_SAVE;
+            txtPW.Text = Properties.Settings.Default.PW_SAVE;
         }
+        private string _id = Properties.Settings.Default.ID_SAVE;
+        private string _pw = Properties.Settings.Default.PW_SAVE;
+
+
         #endregion
 
         // ----------------------------------------------------------------
@@ -323,19 +334,14 @@ namespace Automation_check
         #region 예약 퇴근 체크
         private void Schedule_Check(object sender, EventArgs e)
         {
-            if (cs.drv != null)
-            {
                 Log("Schedule_Check");
                 int hour = Int32.Parse(cbHH.Text.ToString());
                 int minute = Int32.Parse(cbMM.Text.ToString());
                 int seconds = Int32.Parse(cbSS.Text.ToString());
                 SetUpTimer(new TimeSpan(hour, minute, seconds));
                 Log("SetUpTimer");
-            }
-            else
-            {
-                MessageBox.Show("브라우저가 실행되지 않았습니다.", "쑨쑨배", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
+   
 
         }
         private void GotoClick()
