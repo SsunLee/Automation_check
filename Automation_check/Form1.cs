@@ -359,6 +359,19 @@ namespace Automation_check
 
                 cs.typingIDPW();
                 Log("typingIDPW");
+
+                cs.directCheck();
+                Log("end check");
+
+                Thread.Sleep(5000);
+
+                if (checkBox1.Checked)
+                {
+                    // PC 종료 ( 바로종료 )
+                    System.Diagnostics.Process.Start("shutdown.exe", "-s -f");
+                }
+
+
             }
             catch (Exception e)
             {

@@ -55,6 +55,7 @@ namespace Automation_check
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_Showsetting = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.pn_log.SuspendLayout();
             this.pn_IDPW.SuspendLayout();
@@ -157,6 +158,7 @@ namespace Automation_check
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.cbSS);
             this.panel1.Controls.Add(this.cbMM);
@@ -206,7 +208,7 @@ namespace Automation_check
             this.btnRunSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunSchedule.Font = new System.Drawing.Font("새굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnRunSchedule.ForeColor = System.Drawing.Color.White;
-            this.btnRunSchedule.Location = new System.Drawing.Point(61, 62);
+            this.btnRunSchedule.Location = new System.Drawing.Point(110, 57);
             this.btnRunSchedule.Name = "btnRunSchedule";
             this.btnRunSchedule.Size = new System.Drawing.Size(110, 33);
             this.btnRunSchedule.TabIndex = 8;
@@ -330,6 +332,16 @@ namespace Automation_check
             this.btn_Showsetting.Text = "Setting";
             this.btn_Showsetting.UseVisualStyleBackColor = false;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(14, 64);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(90, 19);
+            this.checkBox1.TabIndex = 100;
+            this.checkBox1.Text = "컴퓨터 종료";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -392,6 +404,7 @@ namespace Automation_check
         private System.Windows.Forms.Button btn_IDPWsave;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_Showsetting;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
