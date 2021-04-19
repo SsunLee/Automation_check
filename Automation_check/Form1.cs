@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Management;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -40,6 +41,7 @@ namespace Automation_check
             pn_IDPW.Visible = false;
 
             //TimerTxt
+            label1.Text = GetPublishVersion();
 
         }
 
@@ -193,6 +195,16 @@ namespace Automation_check
             }
         }
 
+        #endregion
+        #region 버전 불러오기 기능
+        public string GetPublishVersion()
+        {
+            string strVersion;
+
+            strVersion = Assembly.GetEntryAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
+
+            return strVersion;
+        }
         #endregion
         // ----------------------------------------------------------------
         // ----------------------------------------------------------------

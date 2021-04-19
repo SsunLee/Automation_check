@@ -58,6 +58,7 @@ namespace Automation_check
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.laTime = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pn_log.SuspendLayout();
             this.pn_IDPW.SuspendLayout();
@@ -362,12 +363,22 @@ namespace Automation_check
             this.laTime.TabIndex = 14;
             this.laTime.Text = "00:00:00";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 336);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 15);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(261, 363);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.laTime);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -427,6 +438,7 @@ namespace Automation_check
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label laTime;
+        private System.Windows.Forms.Label label1;
     }
 }
 
