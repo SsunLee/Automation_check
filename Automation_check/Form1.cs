@@ -25,25 +25,38 @@ namespace Automation_check
             f = this;
             init_event();
             inputValueCombobox();
-            TimerTxt = new Timer();
-            TimerTxt.Tick += Timer_Tick;
-            TimerTxt.Interval = (int)1000;
-            TimerTxt.Start();
+
+            import_time();
 
             cs = new clsSelenium();
 
-            timer_textbox.ReadOnly = true;
-            label1.Text = $"{getUserName()} 님 환영합니다. ^^";
+            string sname = $" - {getUserName()} 님 환영합니다.";
+            this.Text += sname;
+
             txtLog.Font = new Font("맑은 고딕", 8);
 
             pn_log.Visible = false;
             panel1.Visible = false;
             pn_IDPW.Visible = false;
 
+            //TimerTxt
+
         }
+
 
         // ----------------------------------------------------------------
         // 각 종 기능 구현 -----------------------------------------------
+        #region 시계 켜는 기능
+        private void import_time()
+        {
+            TimerTxt = new Timer();
+            TimerTxt.Tick += Timer_Tick;
+            TimerTxt.Interval = (int)1000;
+            TimerTxt.Start();
+        }
+
+
+        #endregion
         #region 콤보박스 값 넣기 기능
         private protected void inputValueCombobox()
         {
@@ -127,13 +140,13 @@ namespace Automation_check
         private void Timer_Tick(object sender, EventArgs e)
         {
 
-            if (timer_textbox.InvokeRequired)
+            if (laTime.InvokeRequired)
             {
-                timer_textbox.Invoke(new MethodInvoker(delegate () { timer_textbox.Text = $"{DateTime.Now.Hour.ToString("00.##")}:{DateTime.Now.Minute.ToString("00.##")}:{DateTime.Now.Second.ToString("00.##")}"; }));
+                laTime.Invoke(new MethodInvoker(delegate () { laTime.Text = $"{DateTime.Now.Hour.ToString("00.##")}:{DateTime.Now.Minute.ToString("00.##")}:{DateTime.Now.Second.ToString("00.##")}"; }));
             }
             else
             {
-                timer_textbox.Text = $"{DateTime.Now.Hour.ToString("00.##")}:{DateTime.Now.Minute.ToString("00.##")}:{DateTime.Now.Second.ToString("00.##")}";
+                laTime.Text = $"{DateTime.Now.Hour.ToString("00.##")}:{DateTime.Now.Minute.ToString("00.##")}:{DateTime.Now.Second.ToString("00.##")}";
             }
         }
         #endregion
@@ -188,14 +201,13 @@ namespace Automation_check
         private void init_event()
         {
             this.Load += new EventHandler(this.main);
-            this.btn_open.Click += new EventHandler(this.openBrowser);
-            this.btn_chk.Click += new EventHandler(this.clickCheck);
             this.btn_quit.Click += new EventHandler(this.clickQuit);
             this.btnRunSchedule.Click += new EventHandler(this.Schedule_Check);
             this.btn_openPanel.Click += new EventHandler(this.Open_Schedule_Panel);
             this.btn_showLog.Click += new EventHandler(this.Open_Log);
             this.btn_Showsetting.Click += new EventHandler(this.Open_settings);
             this.btn_IDPWsave.Click += new EventHandler(this.saveButtonIDPW);
+            this.btn_Early.Click += new EventHandler(this.Check_Early);
             Log("init_event success");
         }
 
@@ -308,26 +320,49 @@ namespace Automation_check
 
         #endregion
 
+        #region 출근 체크
+        private void Check_Early(object sender, EventArgs e)
+        {
+            Log("Check_Early");
+            try
+            {
+                Log("openBrowser");
+                cs.create_webdriver();
+
+                cs.typingIDPW();
+                Log("typingIDPW");
+
+                cs.ClickStartEnd("inChk");
+                Log("Direct Check");
+            }
+            catch (Exception a)
+            {
+                Log(a.Message);
+            }
+        }
+
+
+        #endregion
+
         #region 즉시 퇴근
         private void clickQuit(object sender, EventArgs e)
         {
-            Log("clickQuit");
-            if (cs.drv != null)
+            try
             {
-                try
-                {
-                    cs.directCheck();
-                }
-                catch (Exception a)
-                {
-                    Log(a.Message);
-                }
+                Log("openBrowser");
+                cs.create_webdriver();
 
+                cs.typingIDPW();
+                Log("typingIDPW");
+
+                cs.ClickStartEnd("outChk");
+                Log("Direct Check");
             }
-            else
+            catch (Exception a)
             {
-                MessageBox.Show("브라우저가 실행되지 않았습니다.", "쑨쑨배", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log(a.Message);
             }
+
         }
         #endregion
 
@@ -360,7 +395,7 @@ namespace Automation_check
                 cs.typingIDPW();
                 Log("typingIDPW");
 
-                cs.directCheck();
+                cs.ClickStartEnd("outChk");
                 Log("end check");
 
                 Thread.Sleep(5000);
@@ -368,7 +403,7 @@ namespace Automation_check
                 if (checkBox1.Checked)
                 {
                     // PC 종료 ( 바로종료 )
-                    System.Diagnostics.Process.Start("shutdown.exe", "-s -f");
+                    System.Diagnostics.Process.Start("cmd.exe", "ShutDown.exe -s -f -t 00");
                 }
 
 
@@ -391,6 +426,8 @@ namespace Automation_check
                 cs.drv.Quit();
             }
         }
+
+
         #endregion
 
         // ----------------------------------------------------------------

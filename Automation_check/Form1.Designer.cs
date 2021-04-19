@@ -30,15 +30,12 @@ namespace Automation_check
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.btn_chk = new System.Windows.Forms.Button();
-            this.btn_open = new System.Windows.Forms.Button();
             this.btn_quit = new System.Windows.Forms.Button();
             this.btn_openPanel = new System.Windows.Forms.Button();
-            this.timer_textbox = new System.Windows.Forms.TextBox();
             this.txtLog = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbSS = new System.Windows.Forms.ComboBox();
             this.cbMM = new System.Windows.Forms.ComboBox();
@@ -55,37 +52,18 @@ namespace Automation_check
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_Showsetting = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btn_Early = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.laTime = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pn_log.SuspendLayout();
             this.pn_IDPW.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btn_chk
-            // 
-            this.btn_chk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_chk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_chk.Font = new System.Drawing.Font("새굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_chk.ForeColor = System.Drawing.Color.White;
-            this.btn_chk.Location = new System.Drawing.Point(12, 147);
-            this.btn_chk.Name = "btn_chk";
-            this.btn_chk.Size = new System.Drawing.Size(234, 33);
-            this.btn_chk.TabIndex = 1;
-            this.btn_chk.Text = "로그인";
-            this.btn_chk.UseVisualStyleBackColor = false;
-            // 
-            // btn_open
-            // 
-            this.btn_open.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_open.Font = new System.Drawing.Font("새굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_open.ForeColor = System.Drawing.Color.White;
-            this.btn_open.Location = new System.Drawing.Point(12, 108);
-            this.btn_open.Name = "btn_open";
-            this.btn_open.Size = new System.Drawing.Size(234, 33);
-            this.btn_open.TabIndex = 0;
-            this.btn_open.Text = "Browser Open";
-            this.btn_open.UseVisualStyleBackColor = false;
             // 
             // btn_quit
             // 
@@ -93,9 +71,9 @@ namespace Automation_check
             this.btn_quit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_quit.Font = new System.Drawing.Font("새굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_quit.ForeColor = System.Drawing.Color.White;
-            this.btn_quit.Location = new System.Drawing.Point(127, 186);
+            this.btn_quit.Location = new System.Drawing.Point(122, 22);
             this.btn_quit.Name = "btn_quit";
-            this.btn_quit.Size = new System.Drawing.Size(118, 33);
+            this.btn_quit.Size = new System.Drawing.Size(104, 33);
             this.btn_quit.TabIndex = 3;
             this.btn_quit.Text = "즉시 퇴근";
             this.btn_quit.UseVisualStyleBackColor = false;
@@ -106,25 +84,12 @@ namespace Automation_check
             this.btn_openPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_openPanel.Font = new System.Drawing.Font("새굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_openPanel.ForeColor = System.Drawing.Color.White;
-            this.btn_openPanel.Location = new System.Drawing.Point(14, 186);
+            this.btn_openPanel.Location = new System.Drawing.Point(6, 22);
             this.btn_openPanel.Name = "btn_openPanel";
             this.btn_openPanel.Size = new System.Drawing.Size(110, 33);
             this.btn_openPanel.TabIndex = 2;
             this.btn_openPanel.Text = "예약 퇴근";
             this.btn_openPanel.UseVisualStyleBackColor = false;
-            // 
-            // timer_textbox
-            // 
-            this.timer_textbox.BackColor = System.Drawing.Color.White;
-            this.timer_textbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.timer_textbox.Font = new System.Drawing.Font("맑은 고딕", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.timer_textbox.Location = new System.Drawing.Point(12, 25);
-            this.timer_textbox.Multiline = true;
-            this.timer_textbox.Name = "timer_textbox";
-            this.timer_textbox.Size = new System.Drawing.Size(233, 77);
-            this.timer_textbox.TabIndex = 2;
-            this.timer_textbox.Text = "00:00:00";
-            this.timer_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtLog
             // 
@@ -135,15 +100,6 @@ namespace Automation_check
             this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtLog.Size = new System.Drawing.Size(218, 103);
             this.txtLog.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 342);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 15);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
             // 
             // label2
             // 
@@ -164,15 +120,25 @@ namespace Automation_check
             this.panel1.Controls.Add(this.cbMM);
             this.panel1.Controls.Add(this.cbHH);
             this.panel1.Controls.Add(this.btnRunSchedule);
-            this.panel1.Location = new System.Drawing.Point(12, 225);
+            this.panel1.Location = new System.Drawing.Point(12, 250);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(233, 103);
+            this.panel1.Size = new System.Drawing.Size(233, 78);
             this.panel1.TabIndex = 6;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(13, 48);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(90, 19);
+            this.checkBox1.TabIndex = 100;
+            this.checkBox1.Text = "컴퓨터 종료";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 26);
+            this.label3.Location = new System.Drawing.Point(13, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 99;
@@ -181,7 +147,7 @@ namespace Automation_check
             // cbSS
             // 
             this.cbSS.FormattingEnabled = true;
-            this.cbSS.Location = new System.Drawing.Point(171, 23);
+            this.cbSS.Location = new System.Drawing.Point(170, 7);
             this.cbSS.Name = "cbSS";
             this.cbSS.Size = new System.Drawing.Size(49, 23);
             this.cbSS.TabIndex = 7;
@@ -189,7 +155,7 @@ namespace Automation_check
             // cbMM
             // 
             this.cbMM.FormattingEnabled = true;
-            this.cbMM.Location = new System.Drawing.Point(116, 23);
+            this.cbMM.Location = new System.Drawing.Point(115, 7);
             this.cbMM.Name = "cbMM";
             this.cbMM.Size = new System.Drawing.Size(49, 23);
             this.cbMM.TabIndex = 6;
@@ -197,7 +163,7 @@ namespace Automation_check
             // cbHH
             // 
             this.cbHH.FormattingEnabled = true;
-            this.cbHH.Location = new System.Drawing.Point(61, 23);
+            this.cbHH.Location = new System.Drawing.Point(60, 7);
             this.cbHH.Name = "cbHH";
             this.cbHH.Size = new System.Drawing.Size(49, 23);
             this.cbHH.TabIndex = 5;
@@ -208,7 +174,7 @@ namespace Automation_check
             this.btnRunSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRunSchedule.Font = new System.Drawing.Font("새굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnRunSchedule.ForeColor = System.Drawing.Color.White;
-            this.btnRunSchedule.Location = new System.Drawing.Point(110, 57);
+            this.btnRunSchedule.Location = new System.Drawing.Point(109, 41);
             this.btnRunSchedule.Name = "btnRunSchedule";
             this.btnRunSchedule.Size = new System.Drawing.Size(110, 33);
             this.btnRunSchedule.TabIndex = 8;
@@ -332,15 +298,69 @@ namespace Automation_check
             this.btn_Showsetting.Text = "Setting";
             this.btn_Showsetting.UseVisualStyleBackColor = false;
             // 
-            // checkBox1
+            // btn_Early
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(14, 64);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(90, 19);
-            this.checkBox1.TabIndex = 100;
-            this.checkBox1.Text = "컴퓨터 종료";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.btn_Early.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_Early.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Early.Font = new System.Drawing.Font("새굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Early.ForeColor = System.Drawing.Color.White;
+            this.btn_Early.Location = new System.Drawing.Point(5, 22);
+            this.btn_Early.Name = "btn_Early";
+            this.btn_Early.Size = new System.Drawing.Size(220, 33);
+            this.btn_Early.TabIndex = 2;
+            this.btn_Early.Text = "출근 체크";
+            this.btn_Early.UseVisualStyleBackColor = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.btn_openPanel);
+            this.groupBox1.Controls.Add(this.btn_quit);
+            this.groupBox1.Location = new System.Drawing.Point(11, 173);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(232, 68);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(15, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 15);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "ㆍ퇴근";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.btn_Early);
+            this.groupBox2.Location = new System.Drawing.Point(11, 100);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(232, 67);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(15, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 15);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "ㆍ출근";
+            // 
+            // laTime
+            // 
+            this.laTime.AutoSize = true;
+            this.laTime.Font = new System.Drawing.Font("맑은 고딕", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.laTime.Location = new System.Drawing.Point(16, 19);
+            this.laTime.Name = "laTime";
+            this.laTime.Size = new System.Drawing.Size(222, 65);
+            this.laTime.TabIndex = 14;
+            this.laTime.Text = "00:00:00";
             // 
             // Form1
             // 
@@ -348,17 +368,14 @@ namespace Automation_check
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(261, 363);
+            this.Controls.Add(this.laTime);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pn_IDPW);
             this.Controls.Add(this.pn_log);
             this.Controls.Add(this.btn_Showsetting);
             this.Controls.Add(this.btn_showLog);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.timer_textbox);
-            this.Controls.Add(this.btn_open);
-            this.Controls.Add(this.btn_openPanel);
-            this.Controls.Add(this.btn_quit);
-            this.Controls.Add(this.btn_chk);
             this.Controls.Add(this.label4);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -372,19 +389,18 @@ namespace Automation_check
             this.pn_log.PerformLayout();
             this.pn_IDPW.ResumeLayout(false);
             this.pn_IDPW.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_chk;
-        private System.Windows.Forms.Button btn_open;
         private System.Windows.Forms.Button btn_quit;
         private System.Windows.Forms.Button btn_openPanel;
-        private System.Windows.Forms.TextBox timer_textbox;
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtLog;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
@@ -405,6 +421,12 @@ namespace Automation_check
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_Showsetting;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btn_Early;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label laTime;
     }
 }
 

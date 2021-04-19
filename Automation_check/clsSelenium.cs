@@ -78,25 +78,37 @@ namespace Automation_check
 
         }
 
-        public void directCheck()
-        {
-            // 즉시 퇴근 체크
-            ClickTheButton();
-        }
 
-        private void ClickTheButton()
+        public void ClickStartEnd(string strID)
         {
-
-            var elementQuit = drv.FindElement(By.Id("outChk"));
-            elementQuit.Click();
+            IWebElement elementQuit;
 
             try
             {
+                elementQuit = drv.FindElement(By.Id(strID));
+                Form1.f.Log($"{strID}");
+
+                elementQuit.Click();
+
                 WebDriverWait wait = new WebDriverWait(drv, TimeSpan.FromSeconds(10));
                 IAlert alert = wait.Until(ExpectedConditions.AlertIsPresent());
+
+                //IAlert alert = drv.SwitchTo().Alert();
                 Form1.f.Log($"[Selenium Class]> popup : {alert.Text.ToString()}");
                 alert.Accept();
+                
+                if (strID == "outChk")
+                {
+                    Form1.f.Log($"퇴근 체크 완료");
+                }
+                else 
+                {
+                    Form1.f.Log($"출근 체크 완료");
+                }
                 Thread.Sleep(2000);
+                drv.Close();
+                drv = null;
+
             }
             catch (NoAlertPresentException e)
             {
